@@ -21,7 +21,7 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
-    @IBOutlet weak var defenceLabel: UILabel!
+    @IBOutlet weak var defenseLabel: UILabel!
     @IBOutlet weak var pokedexLabel: UILabel!
     @IBOutlet weak var attackLabel: UILabel!
     @IBOutlet weak var evolutionLabel: UILabel!
@@ -34,6 +34,20 @@ class PokemonDetailVC: UIViewController {
         // Do any additional setup after loading the view.
         
         nameLabel.text = pokemon.name
+        
+        pokemon.downloadPokemonDetails {
+            //This will be called after the network call is complete
+            self.updateUI()
+        }
+        
+    }
+    
+    func updateUI() {
+        
+        attackLabel.text = pokemon.attack
+        defenseLabel.text = pokemon.defense
+        heightLabel.text = pokemon.height
+        weightLabel.text = pokemon.weight
         
     }
 
