@@ -30,49 +30,49 @@ class Pokemon {
         if _description == nil {
             _description = ""
         }
-        return self.description
+        return self._description
     }
    
     var type: String {
         if _type == nil {
             _type = ""
         }
-        return self.type
+        return self._type
     }
         
     var defense: String {
         if _defense == nil {
             _defense = ""
         }
-        return self.defense
+        return self._defense
     }
     
     var height: String {
         if _height == nil {
             _height = ""
         }
-        return self.height
+        return self._height
     }
     
     var weight: String {
         if _weight == nil {
             _weight = ""
         }
-        return self.weight
+        return self._weight
     }
     
     var attack: String {
         if _attack == nil {
             _attack = ""
         }
-        return self.attack
+        return self._attack
     }
     
     var nextEvolutionText: String {
         if _nextEvolutionText == nil {
             _nextEvolutionText = ""
         }
-        return self.nextEvolutionText
+        return self._nextEvolutionText
     }
     
     // MARK: Initialisation
