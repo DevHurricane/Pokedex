@@ -33,7 +33,7 @@ class PokemonDetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        nameLabel.text = pokemon.name
+        nameLabel.text = pokemon.name.capitalized
         let image = UIImage(named: "\(pokemon.pokedexId)")
         
         mainImage.image = image
@@ -53,6 +53,18 @@ class PokemonDetailVC: UIViewController {
         heightLabel.text = pokemon.height
         weightLabel.text = pokemon.weight
         typeLabel.text = pokemon.type
+        descriptionLabel.text = pokemon.description
+
+        if pokemon.nextEvolutionID == "" {
+            evolutionLabel.text = "No evolutions"
+            nextEvolveImage.isHidden = true
+        } else {
+            nextEvolveImage.isHidden = false
+            nextEvolveImage.image = UIImage(named: pokemon.nextEvolutionID)
+            let str = "Next Evolution: \(pokemon.nextEvolutionName) - LVL \(pokemon.nextEvolutionLevel)"
+            evolutionLabel.text = str
+        }
+        
         
     }
 
